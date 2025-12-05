@@ -14,8 +14,6 @@
 
 		"paths": {
 			"$/*": ["./src/*"],
-			"$app*": ["./src/app/*"],
-			"$pages*": ["./src/pages/*"],
 			"$feature/*": ["./src/feature/*"],
 			"$entities/*": ["./src/entities/*"],
 			"$shared/*": ["./src/shared/*"]
