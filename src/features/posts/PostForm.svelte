@@ -80,7 +80,7 @@
 
 	<div class="actions">
 		<button type="button" class="button button-secondary" onclick={oncancel}> Отмена </button>
-		<button type="submit" class="button button-primary">Создать пост</button>
+		<button type="submit" class="button button-primary">Сохранить</button>
 	</div>
 </form>
 
