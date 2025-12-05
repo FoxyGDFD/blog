@@ -11,7 +11,7 @@
 	const oncancel = () => goto('/');
 </script>
 
-<div class="page">
+<div class="container">
 	<Breadcrumbs items={[{ title: 'Блог', href: '/' }, { title: 'Новый пост' }]} />
 
 	<div class="create-post-header">
@@ -23,10 +23,8 @@
 </div>
 
 <style>
-	.page {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
+	.container * {
+		max-width: 0 auto;
 	}
 
 	.create-post-header {

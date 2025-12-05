@@ -39,6 +39,7 @@
 	.blog-header {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
 		margin: var(--spacing-xl) auto;
 		padding-bottom: var(--spacing-lg);
 		border-bottom: 1px solid var(--color-border);

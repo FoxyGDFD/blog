@@ -39,7 +39,7 @@
 	};
 </script>
 
-<form onsubmit={handleSubmit}>
+<form class="card" onsubmit={handleSubmit}>
 	<div class="field" data-error={!!errors.title}>
 		<label for="title">Заголовок <span>*</span></label>
 
@@ -86,16 +86,6 @@
 </form>
 
 <style>
-	form {
-		max-width: 50rem;
-		margin: 0 auto;
-		width: 100%;
-		background-color: var(--color-surface);
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--color-border);
-		padding: var(--spacing-xl);
-	}
-
 	.field {
 		margin-bottom: 1.5rem;
 	}
@@ -115,8 +105,8 @@
 	textarea {
 		width: 100%;
 		padding: 0.75rem;
-		background: var(--color-bg-1);
-		border: 1px solid var(--color-bg-0);
+		background: var(--color-bg);
+		border: 1px solid var(--color-bg);
 		border-radius: 8px;
 		font-size: 1rem;
 		color: var(--color-text);
@@ -175,7 +165,7 @@
 		gap: 1.5rem;
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 640px) {
 		form {
 			padding: 1.25rem;
 			margin: 0;

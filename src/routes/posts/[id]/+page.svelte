@@ -7,9 +7,7 @@
 	import { EditPostButton } from '$/features/posts';
 	import RemovePostButton from '$/features/posts/RemovePostButton.svelte';
 	import { CalendarIcon, EditIcon } from '$/shared/icons';
-	import { Breadcrumbs } from '$/shared/ui';
-
-	let error = $state<string | null>(null);
+	import { Breadcrumbs, NoPostWidget } from '$/shared/ui';
 
 	const { id } = $page.params;
 
@@ -18,8 +16,6 @@
 		const foundPost = $posts.find((p) => p.id === id);
 		if (foundPost) {
 			post = foundPost;
-		} else {
-			error = 'Пост не найден';
 		}
 	});
 
@@ -32,8 +28,8 @@
 </script>
 
 {#if post}
-	<article class="post-article">
-		<header>
+	<article class="container">
+		<header class="card">
 			<Breadcrumbs items={[{ title: 'Блог', href: '/' }, { title: post.title }]} />
 			<div class="post-header-main">
 				<h1 class="post-title">{post.title}</h1>
@@ -67,30 +63,17 @@
 			</div>
 		</header>
 
-		<div class="post-content">
+		<div class="card post-content">
 			<div class="content-text">
 				{@html formatContent(post.content)}
 			</div>
 		</div>
 	</article>
+{:else}
+	<NoPostWidget />
 {/if}
 
 <style>
-	.post-article {
-		max-width: 800px;
-		background-color: var(--color-surface);
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--color-border);
-		overflow: hidden;
-		margin: 0 auto;
-	}
-
-	.post-article header {
-		padding: var(--spacing-xl);
-		border-bottom: 1px solid var(--color-border);
-		background-color: var(--color-surface);
-	}
-
 	.post-header-main {
 		display: flex;
 		justify-content: space-between;
@@ -160,10 +143,6 @@
 	}
 
 	@media (max-width: 768px) {
-		.post-article header {
-			padding: var(--spacing-lg);
-		}
-
 		.post-header-main {
 			flex-direction: column;
 			align-items: stretch;
@@ -185,6 +164,10 @@
 		.content-text {
 			font-size: var(--font-size-md);
 		}
+
+		.no-post {
+			padding: var(--spacing-lg);
+		}
 	}
 
 	@media (max-width: 640px) {
@@ -201,22 +184,11 @@
 	}
 
 	@media (max-width: 480px) {
-		.post-article {
-			border-radius: var(--radius-md);
-			border: none;
-			background-color: transparent;
-		}
-
-		.post-article header,
 		.post-content {
 			padding: var(--spacing-md);
 			background-color: var(--color-surface);
 			margin-bottom: var(--spacing-md);
 			border-radius: var(--radius-md);
-		}
-
-		.post-article header {
-			border-bottom: 1px solid var(--color-border);
 		}
 	}
 </style>

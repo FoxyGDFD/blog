@@ -17,8 +17,8 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background-color: #333;
-		opacity: 0.4;
+		background-color: var(--color-bg);
+		opacity: 0.7;
 	}
 
 	#modal {
@@ -32,5 +32,11 @@
 		border-radius: var(--radius-lg);
 		border: 1px solid var(--color-border);
 		box-shadow: var(--shadow-md);
+	}
+
+	@media (max-width: 640px) {
+		#modal {
+			width: 90vw;
+		}
 	}
 </style>

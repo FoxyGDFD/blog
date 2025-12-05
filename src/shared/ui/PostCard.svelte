@@ -52,13 +52,14 @@
 	}
 
 	.post-card {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
 		background-color: var(--color-surface);
 		border-radius: var(--radius-lg);
 		border: 1px solid var(--color-border);
 		padding: var(--spacing-lg);
+
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		transition: all var(--transition-normal);
 		cursor: pointer;
 		user-select: none;
@@ -146,7 +147,6 @@
 		color: var(--color-primary-hover);
 	}
 
-	/* Адаптивность для тач-устройств */
 	@media (max-width: 640px) {
 		.post-card {
 			padding: var(--spacing-md);
@@ -166,7 +166,6 @@
 			font-size: var(--font-size-xs);
 		}
 
-		/* Увеличение области нажатия для тач-устройств */
 		.post-link::after {
 			content: '';
 			position: absolute;
@@ -188,7 +187,6 @@
 		}
 	}
 
-	/* Поддержка редуцированного движения */
 	@media (prefers-reduced-motion: reduce) {
 		.post-card,
 		.post-card:hover {

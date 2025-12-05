@@ -12,13 +12,13 @@
 
 <style>
 	.app {
-		margin: 0 auto;
 		min-height: 100vh;
+		background-color: var(--color-bg);
 	}
 	.app main {
+		margin: 0 auto;
 		max-width: 64rem;
 		min-height: 100vh;
 		padding: var(--spacing-xl) 1.5rem;
-		background-color: var(--color-bg);
 	}
 </style>
