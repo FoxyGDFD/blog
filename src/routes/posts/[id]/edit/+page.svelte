@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Breadcrumbs, NoPostWidget } from '$/shared/ui';
-	import { PostForm } from '$/features/posts';
+	import { Breadcrumbs, NoPostWidget } from '$shared/ui';
+	import { PostForm } from '$features/posts';
 	import { page } from '$app/stores';
-	import { posts, updatePost, type SavePost, type Post } from '$/entities/posts';
+	import { posts, updatePost, type SavePost, type Post } from '$entities/posts';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 

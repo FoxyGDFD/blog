@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Post } from '$/entities/posts';
-	import { EditIcon } from '$/shared/icons';
+	import type { Post } from '$entities/posts';
+	import { EditIcon } from '$shared/icons';
 
 	let { id }: Pick<Post, 'id'> = $props();
 </script>

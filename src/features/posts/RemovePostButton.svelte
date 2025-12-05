@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { removePost, type Post } from '$/entities/posts';
-	import { RemoveIcon } from '$/shared/icons';
-	import { Modal } from '$/shared/ui';
+	import { removePost, type Post } from '$entities/posts';
+	import { RemoveIcon } from '$shared/icons';
+	import { Modal } from '$shared/ui';
 	import { goto } from '$app/navigation';
 
 	let { id }: Pick<Post, 'id'> = $props();

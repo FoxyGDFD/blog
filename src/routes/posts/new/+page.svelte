@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Breadcrumbs, CreatePostTips } from '$/shared/ui';
-	import { PostForm } from '$/features/posts';
-	import { createPost, type SavePost } from '$/entities/posts';
+	import { Breadcrumbs, CreatePostTips } from '$shared/ui';
+	import { PostForm } from '$features/posts';
+	import { createPost, type SavePost } from '$entities/posts';
 	import { goto } from '$app/navigation';
 
 	const onsubmit = (post: SavePost) => {

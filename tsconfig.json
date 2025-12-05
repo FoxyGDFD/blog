@@ -13,9 +13,7 @@
 		"moduleResolution": "bundler",
 
 		"paths": {
-			"$/*": ["./src/*"],
-			"$pages*": ["./src/pages/*"],
-			"$feature/*": ["./src/feature/*"],
+			"$features/*": ["./src/features/*"],
 			"$entities/*": ["./src/entities/*"],
 			"$shared/*": ["./src/shared/*"]
 		}
