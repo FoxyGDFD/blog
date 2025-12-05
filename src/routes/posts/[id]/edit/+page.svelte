@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Breadcrumbs } from '$/shared/ui';
+	import { Breadcrumbs, NoPostWidget } from '$/shared/ui';
 	import { PostForm } from '$/features/posts';
 	import { page } from '$app/stores';
 	import { posts, updatePost, type SavePost, type Post } from '$/entities/posts';
@@ -7,9 +7,8 @@
 	import { goto } from '$app/navigation';
 
 	let post = $state<Post | null>(null);
-	let error = $state<string | null>(null);
+	let error = $state<boolean>(false);
 
-	// создаём редактируемое состояние
 	let createPostState = $state<SavePost>({
 		title: '',
 		content: ''
@@ -21,13 +20,12 @@
 		const foundPost = $posts.find((p) => p.id === id);
 
 		if (!foundPost) {
-			error = 'Пост не найден';
+			error = true;
 			return;
 		}
 
 		post = foundPost;
 
-		// заполняем bindable объект
 		createPostState.title = post.title;
 		createPostState.content = post.content;
 	});
@@ -41,12 +39,9 @@
 </script>
 
 {#if error}
-	<div class="error">
-		<h1>{error}</h1>
-		<button onclick={() => goto('/')}>Вернуться</button>
-	</div>
+	<NoPostWidget />
 {:else}
-	<div class="page">
+	<div class="container">
 		<Breadcrumbs
 			items={[
 				{ title: 'Блог', href: '/' },
@@ -54,25 +49,27 @@
 				{ title: 'Редактирование' }
 			]}
 		/>
-
-		<div class="create-post-header">
-			<h1>Изменить пост</h1>
-		</div>
-
+		<h1>Изменить пост</h1>
 		<PostForm bind:initialData={createPostState} {onsubmit} {oncancel} />
 	</div>
 {/if}
 
 <style>
-	.error {
+	.container * {
+		max-width: 0 auto;
+	}
+
+	h1 {
 		text-align: center;
-		margin-top: 4rem;
+		font-size: var(--font-size-3xl);
+		font-weight: 700;
+		margin-bottom: var(--spacing-xs);
+		color: var(--color-text);
 	}
-	.error h1 {
-		color: var(--color-danger);
-		margin-bottom: 1rem;
-	}
-	.error button {
-		padding: 0.5rem 1rem;
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: var(--font-size-2xl);
+		}
 	}
 </style>

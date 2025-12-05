@@ -10,7 +10,6 @@
   --color-hover: #f1f5f9;
 	--color-danger: #ef4444;
   
-  --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
 
@@ -29,7 +28,6 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
   
-  --shadow-sm: 0 1px 2px 0 var(--color-shadow);
   --shadow-md: 0 4px 6px -1px var(--color-shadow);
   --shadow-lg: 0 10px 15px -3px var(--color-shadow);
   
@@ -82,13 +80,6 @@ a {
   outline-offset: 2px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -115,17 +106,6 @@ a {
   width: 1.125rem;
   height: 1.125rem;
   vertical-align: middle;
-}
-
-.button.icon-only {
-  padding: var(--spacing-sm);
-  aspect-ratio: 1;
-  justify-content: center;
-}
-
-.button.icon-only svg {
-  width: 1.25rem; 
-  height: 1.25rem; 
 }
 
 .button-primary {
@@ -165,12 +145,6 @@ a {
 	box-shadow: var(--shadow-md);
 }
 
-.button span {
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-}
-
 @media (hover: none) {
   .button:hover {
     transform: none;
@@ -188,5 +162,30 @@ a {
   
   .button:hover {
     transform: none;
+  }
+}
+
+.container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		max-width: 50rem;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xl)
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
   }
 }

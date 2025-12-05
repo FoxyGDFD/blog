@@ -39,6 +39,7 @@
 		display: flex;
 		gap: 1.5rem;
 		flex-direction: column;
+		width: 100%;
 	}
 	.remove-modal p {
 		font-size: var(--font-size-lg);
@@ -49,5 +50,6 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 1.5rem;
 	}
 </style>

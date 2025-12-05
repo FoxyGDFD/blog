@@ -1,4 +1,4 @@
-<aside class="form-tips">
+<aside class="card">
 	<h2 class="tips-title">
 		<svg
 			class="tips-icon"
@@ -38,15 +38,6 @@
 </aside>
 
 <style>
-	.form-tips {
-		max-width: 50rem;
-		margin: 0 auto;
-		background-color: var(--color-surface);
-		border-radius: var(--radius-lg);
-		border: 1px solid var(--color-border);
-		padding: var(--spacing-xl);
-	}
-
 	.tips-title {
 		display: flex;
 		align-items: center;
