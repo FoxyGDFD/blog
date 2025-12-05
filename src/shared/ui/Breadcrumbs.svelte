@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { spa } from '$shared/lib/routing';
+
 	type BreadcrumbItem = {
 		title: string;
 		href?: string;
@@ -10,7 +12,7 @@
 <nav class="breadcrumbs" aria-label="Хлебные крошки">
 	{#each items as item, i}
 		{#if item.href}
-			<a href={item.href} class="breadcrumb-link">
+			<a {@attach spa} href={item.href} class="breadcrumb-link">
 				{item.title}
 			</a>
 		{:else}

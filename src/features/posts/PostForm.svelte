@@ -2,7 +2,6 @@
 	import { safeParse } from 'valibot';
 	import { SavePostSchema } from '$entities/posts';
 	import type { SavePost } from '$entities/posts';
-	import { goto } from '$app/navigation';
 
 	let {
 		initialData = $bindable({

@@ -2,6 +2,7 @@
 	import type { Post } from '$entities/posts';
 	import { CalendarIcon, EditIcon } from '../icons';
 	import { formatDate } from '../utils';
+	import { spa } from '$shared/lib/routing';
 
 	const { id, title, createdAt, updatedAt }: Post = $props();
 
@@ -9,7 +10,7 @@
 	let updatedAtFormatted = $derived(formatDate(updatedAt));
 </script>
 
-<a href={`/posts/${id}`} class="post-link">
+<a {@attach spa} href={`/posts/${id}`} class="post-link">
 	<article class="post-card" aria-labelledby="post-title-{id}">
 		<header class="post-card-header">
 			<h2 id="post-title-{id}" class="post-title">{title}</h2>

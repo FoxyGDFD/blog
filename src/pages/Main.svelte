@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CreatePostButton } from '$/features/posts';
+	import { CreatePostButton } from '$features/posts';
 	import { posts } from '$entities/posts';
 	import { PostCard } from '$shared/ui';
 </script>

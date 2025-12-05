@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { removePost, type Post } from '$/entities/posts';
-	import { RemoveIcon } from '$/shared/icons';
-	import { Modal } from '$/shared/ui';
-	import { goto } from '$app/navigation';
+	import { removePost, type Post } from '$entities/posts';
+	import { RemoveIcon } from '$shared/icons';
+	import { Modal } from '$shared/ui';
+	import { navigate } from '$shared/lib/routing';
 
 	let { id }: Pick<Post, 'id'> = $props();
 	let opened = $state<boolean>(false);
@@ -21,7 +21,7 @@
 				class="button button-danger"
 				onclick={() => {
 					removePost(id);
-					goto('/');
+					navigate('/');
 				}}>Удалить</button
 			>
 			<button

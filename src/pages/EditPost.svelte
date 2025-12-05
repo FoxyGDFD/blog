@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Breadcrumbs, NoPostWidget } from '$/shared/ui';
-	import { PostForm } from '$/features/posts';
-	import { page } from '$app/stores';
-	import { posts, updatePost, type SavePost, type Post } from '$/entities/posts';
+	import { Breadcrumbs, NoPostWidget } from '$shared/ui';
+	import { PostForm } from '$features/posts';
+	import { posts, updatePost, type SavePost, type Post } from '$entities/posts';
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { navigate, params } from '$shared/lib/routing';
 
 	let post = $state<Post | null>(null);
 	let error = $state<boolean>(false);
@@ -14,7 +13,7 @@
 		content: ''
 	});
 
-	const { id } = $page.params;
+	const { id } = $params;
 
 	onMount(() => {
 		const foundPost = $posts.find((p) => p.id === id);
@@ -32,10 +31,10 @@
 
 	const onsubmit = (draft: SavePost) => {
 		updatePost(id!, draft);
-		goto(`/posts/${id}`);
+		navigate(`/posts/${id}`);
 	};
 
-	const oncancel = () => goto(`/posts/${id}`);
+	const oncancel = () => navigate(`/posts/${id}`);
 </script>
 
 {#if error}

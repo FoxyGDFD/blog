@@ -1,7 +1,11 @@
+<script lang="ts">
+	import { spa } from '$shared/lib/routing';
+</script>
+
 <article class="no-post-container">
 	<div class="card no-post">
 		<h2>Такого поста не существует</h2>
-		<a href="/" class="button button-primary">Вернуться на главную</a>
+		<a {@attach spa} href="/" class="button button-primary">Вернуться на главную</a>
 	</div>
 </article>
 

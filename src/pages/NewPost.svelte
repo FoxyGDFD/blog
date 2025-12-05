@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Breadcrumbs, CreatePostTips } from '$/shared/ui';
-	import { PostForm } from '$/features/posts';
-	import { createPost, type SavePost } from '$/entities/posts';
-	import { goto } from '$app/navigation';
+	import { Breadcrumbs, CreatePostTips } from '$shared/ui';
+	import { PostForm } from '$features/posts';
+	import { createPost, type SavePost } from '$entities/posts';
+	import { navigate } from '$shared/lib/routing';
 
 	const onsubmit = (post: SavePost) => {
 		createPost(post);
-		goto('/');
+		navigate('/');
 	};
-	const oncancel = () => goto('/');
+	const oncancel = () => navigate('/');
 </script>
 
 <div class="container">

@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 	import { posts } from '$entities/posts';
 	import type { Post } from '$entities/posts';
-	import { formatDate } from '$/shared/utils';
-	import { EditPostButton } from '$/features/posts';
-	import RemovePostButton from '$/features/posts/RemovePostButton.svelte';
-	import { CalendarIcon, EditIcon } from '$/shared/icons';
-	import { Breadcrumbs, NoPostWidget } from '$/shared/ui';
+	import { formatDate } from '$shared/utils';
+	import { EditPostButton } from '$features/posts';
+	import RemovePostButton from '$features/posts/RemovePostButton.svelte';
+	import { CalendarIcon, EditIcon } from '$shared/icons';
+	import { Breadcrumbs, NoPostWidget } from '$shared/ui';
+	import { params } from '$shared/lib/routing';
 
-	const { id } = $page.params;
+	const { id } = $params;
 
 	let post = $state<Post | null>(null);
 	onMount(() => {
