@@ -16,7 +16,6 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$: path.resolve('./src'),
-			$app: path.resolve('./src/app'),
 			$pages: path.resolve('./src/pages'),
 			$feature: path.resolve('./src/feature'),
 			$entities: path.resolve('./src/entities'),
