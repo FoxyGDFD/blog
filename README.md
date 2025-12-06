@@ -1,18 +1,7 @@
-# sv
+## Project
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+Simple blog site, posts sotes data in local storage.
+This branch uses [SvelteKit](https://svelte.dev/docs/kit/introduction) router. All pages are created in the spa mode. If SvelteKit cannot be used in the project see `svelte/custom-router` branch.
 
 ## Developing
 
